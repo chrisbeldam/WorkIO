@@ -7,3 +7,10 @@ def index(request):
         "page_title": page_title,
     }
     return render(request, 'jobs/index.html', context)
+
+def results(request):
+    page_title = "Search Results"
+    context = {
+        'page_title': page_title
+        }
+    return render (request, 'jobs/results.html', context)

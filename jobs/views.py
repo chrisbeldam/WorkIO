@@ -17,7 +17,9 @@ def create_a_contract(request):
     if request.method == "POST":
         if form.is_valid():
             form.save()
-            return HttpResponse('Test')
+            return HttpResponse('Your form has been successfully submitted')
+        else:
+            return HttpResponse('The form you submitted was invalid, please try again')
     context = {
         'form': form,
         'page_title': page_title

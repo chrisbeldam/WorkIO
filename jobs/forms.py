@@ -8,10 +8,12 @@ class ContractCreateForm(forms.ModelForm):
             'contract_title',
             'contract_description',
             'contract_location',
-            'contract_salary',
+            'contract_monthly_salary',
             'contract_recruiter',
             'recruiter_email',
             'recruiter_telephone',
+            'date_created',
+            'contract_expiry_date',
         ]
 
 class ContractUpgradeForm():

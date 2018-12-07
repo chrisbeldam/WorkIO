@@ -1,0 +1,19 @@
+{% extends "jobs/base.html" %}
+
+{% load bootstrap4 %}
+{% block title %} {{ page_title }} {%endblock title%}
+{% block content %}
+<div class="jumbotron jumbotron-fluid" style="width:50%; margin:0 auto; text-align:center">
+  <h2>Create A Contract</h2>
+</div>
+
+<div class="container">
+  <div class="row">
+    <form action="/results/" method="post">
+      {% csrf_token %}
+      {{ form }}
+       <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+{% endblock content %}

@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('results/', views.results, name='results'),
+    path('create/', views.create_a_contract, name='create'),
 ]

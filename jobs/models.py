@@ -15,7 +15,7 @@ class Contract(models.Model):
     featured_contract = models.BooleanField(default=False)
     date_created = models.DateField(_("Contract Start Date"), default=datetime.date.today) #This allows for the internationalisation of the date field#
     contract_expiry_date = models.DateField(_("Contract Expiry Date"), default=datetime.date.today)
-    contract_created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=False) ## Links the user to the role
+    contract_created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=True) ## Links the user to the role
 
     class Meta:
         pass

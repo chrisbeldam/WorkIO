@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from .forms import ContractCreateForm
 
 def index(request):
+    """ Takes you back to the home page """
     page_title = "Home"
     context = {
         "page_title": page_title,
@@ -33,6 +34,7 @@ def create_a_contract(request):
 #     pass
 
 def results(request):
+    """ Returns any search results for jobs """
     page_title = "Search Results"
     context = {
         'page_title': page_title

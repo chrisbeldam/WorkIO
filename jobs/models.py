@@ -1,5 +1,5 @@
-from django.db import models
 import datetime
+from django.db import models
 from django.utils.translation import gettext as _
 from django.contrib.auth.models import User
 
@@ -13,10 +13,11 @@ class Contract(models.Model):
     recruiter_email = models.EmailField()
     recruiter_telephone = models.CharField(max_length=11)
     featured_contract = models.BooleanField(default=False)
-    date_created = models.DateField(_("Contract Start Date"), default=datetime.date.today) #This allows for the internationalisation of the date field#
+    #This allows for the internationalisation of the date field #
+    date_created = models.DateField(_("Contract Start Date"), default=datetime.date.today)
     contract_expiry_date = models.DateField(_("Contract Expiry Date"), default=datetime.date.today)
-    contract_created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=True) ## Links the user to the role
-
+    # Links the user to the role
+    contract_created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=True)
     class Meta:
         pass
 

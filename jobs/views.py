@@ -29,20 +29,20 @@ def create_a_contract(request):
     }
     return render(request, 'jobs/create.html', context)
 
+def home_page_search(request):
+    """ Runs the search from the homepage """
+    pass
+
+def results(request):
+    """ Returns any search results for jobs """
+    page_title = "Search Results"
+    context = {
+        'page_title': page_title
+    }
+    return render(request, 'jobs/results.html', context)
+
 # def edit_a_contract(request):
 #     pass
 
 # def delete_a_contract(request):
 #     pass
-
-def home_page_search(request):
-    """ Runs the search from the homepage """
-    pass
-
-# def results(request):
-#     """ Returns any search results for jobs """
-#     page_title = "Search Results"
-#     context = {
-#         'page_title': page_title
-#     }
-#     return render(request, 'jobs/results.html', context)

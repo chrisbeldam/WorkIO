@@ -6,26 +6,83 @@
 
 {% block content %}
 
-<!-- <div class="jumbotron" style="width:100%;">
-  <h2>Search</h2>
-</div> -->
 
-<div class="jumbotron jumbotron-fluid" style="width:50%; margin:0 auto; text-align:center">
-  <h2>Contract Work - Find your next contract here</h2>
+<div class="position-relative overflow-hidden p-3 m-md-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">WorkIO</h1>
+    <p class="lead font-weight-normal">Find contract work which is specifically suited to your skills as a developer, whether that's Python, Swift, JavaScript or C</p>
+    <a class="btn btn-outline-secondary" href="#">Search</a>
+  </div>
 </div>
 
-<div class="jumbotron jumbotron-fluid" style="width:50%; margin:0 auto; text-align:center; margin-top:3%;">
-  <h2>Search for your specific contract, whether that's a python, swift or java contract</h2>
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+  <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+    <div class="my-3 py-3">
+      <h2 class="display-5">Common Searches</h2>
+    </div>
+    <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  </div>
+  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-3 p-3">
+      <h2 class="display-5">Recently Added</h2>
+    </div>
+    <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  </div>
 </div>
 
 
-<div class="jumbotron jumbotron-fluid" style="width:50%; margin:0 auto; text-align:center; margin-top:3%;">
-<h2>Common Searches</h2>
-</div>
+<style>
+  .container {
+  max-width: 100%;
+}
+.product-device {
+  position: absolute;
+  right: 10%;
+  bottom: -30%;
+  width: 300px;
+  height: 540px;
+  background-color: #333;
+  border-radius: 21px;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
 
-<div class="jumbotron jumbotron-fluid" style="width:50%; margin:0 auto; text-align:center; margin-top:3%;">
-<h2>Most Recently Added</h2>
-</div>
+.product-device::before {
+  position: absolute;
+  top: 10%;
+  right: 10px;
+  bottom: 10%;
+  left: 10px;
+  content: "";
+  background-color: rgba(255, 255, 255, .1);
+  border-radius: 5px;
+}
+
+.product-device-2 {
+  top: -25%;
+  right: auto;
+  bottom: 0;
+  left: 5%;
+  background-color: #e5e5e5;
+}
 
 
+/*
+ * Extra utilities
+ */
+
+.flex-equal > * {
+  -ms-flex: 1;
+  flex: 1;
+}
+@media (min-width: 768px) {
+  .flex-md-equal > * {
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
+
+.overflow-hidden { overflow: hidden; }
+
+</style>
 {% endblock content %}

@@ -1,4 +1,4 @@
-WorkIO
+WorkIO - A Contract Based Job Board
 
 pipenv shell = run virtual environment
 

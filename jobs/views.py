@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-
+from django.views.generic.list import ListView
 from .forms import ContractCreateForm
 
 def index(request):
@@ -35,10 +35,14 @@ def create_a_contract(request):
 # def delete_a_contract(request):
 #     pass
 
-def results(request):
-    """ Returns any search results for jobs """
-    page_title = "Search Results"
-    context = {
-        'page_title': page_title
-    }
-    return render(request, 'jobs/results.html', context)
+def home_page_search(request):
+    """ Runs the search from the homepage """
+    pass
+
+# def results(request):
+#     """ Returns any search results for jobs """
+#     page_title = "Search Results"
+#     context = {
+#         'page_title': page_title
+#     }
+#     return render(request, 'jobs/results.html', context)

@@ -22,4 +22,4 @@ class Contract(models.Model):
         pass
 
     def __str__(self):
-        return self.contract_title + " - " + self.contract_created_by
+        return self.contract_title

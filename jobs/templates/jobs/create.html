@@ -7,14 +7,13 @@
   <h2>Create A Contract</h2>
 </div>
 
-<form>
+<form action="" method="post">
   <div class="row">
     <div class="col-sm-10 px-2 py-5" style="text-align:center;">
       {% csrf_token %}
-      {{ form.as_p }}
+      {% bootstrap_form form %}
       <button type="submit" class="btn btn-primary" style="text-align:center">Submit</button>
     </div>
   </div>
-
 </form>
 {% endblock content %}

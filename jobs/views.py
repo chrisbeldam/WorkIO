@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 from .forms import ContractCreateForm
@@ -14,13 +14,15 @@ def index(request):
 def create_a_contract(request):
     """ Creates a contract for the website on submission of the form """
     page_title = "Create your contract"
-    form = ContractCreateForm(request.POST or None)
     if request.method == "POST":
+        form = ContractCreateForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponse('Your form has been successfully submitted')
+            return redirect('/results/')
         else:
             return HttpResponse('The form you submitted was invalid, please try again')
+    else:
+        form = ContractCreateForm()
     context = {
         'form': form,
         'page_title': page_title

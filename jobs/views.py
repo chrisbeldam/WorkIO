@@ -41,6 +41,16 @@ def results(request):
     }
     return render(request, 'jobs/results.html', context)
 
+def contract_creation_email(request):
+    """ Sends the user and the admin an email to confirm the job was posted """
+    user_email = ""
+    admin_email = ""
+    email_message = ""
+    pass
+
+def check_enhanced_expiry(request):
+    """ Checks all of the jobs to see which are enhanced, then if they are expired it unenhances them """
+    pass
 # def edit_a_contract(request):
 #     pass
 

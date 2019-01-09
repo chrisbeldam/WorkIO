@@ -17,8 +17,8 @@ class ContractCreateForm(forms.ModelForm):
             'contract_created_by',
         ]
 
-class ContractUpgradeForm():
-    pass
+# class ContractUpgradeForm():
+#     pass
 
 # class ContractEditForm():
 #     pass

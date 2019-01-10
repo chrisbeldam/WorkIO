@@ -26,4 +26,5 @@ urlpatterns = [
     path('create/', views.create_a_contract, name='create'),
     path('accounts/', include('django.contrib.auth.urls')),
     # path('accounts/', include('accounts.urls'))
+    # Add List View for contracts
 ]

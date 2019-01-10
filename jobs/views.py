@@ -2,6 +2,14 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic.list import ListView
 from .forms import ContractCreateForm
+from jobs.models import Contract
+import datetime
+
+class ContractListView(ListView):
+    model = Contract
+
+    def test:
+        pass
 
 def index(request):
     """ Takes you back to the home page """
@@ -50,7 +58,9 @@ def contract_creation_email(request):
 
 def check_enhanced_expiry(request):
     """ Checks all of the jobs to see which are enhanced, then if they are expired it unenhances them """
-    pass
+    if Contract.objects.get(featured_contract = True): # grabs whether the contract is enhanced or not
+        pass
+
 # def edit_a_contract(request):
 #     pass
 

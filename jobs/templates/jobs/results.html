@@ -12,5 +12,22 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+  {% for instance in object_list %}
+  <div class="col-sm-3">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{ instance.contract_title }} </h5
+        <h6 class="card-subtitle mb-2 text-muted">£{{ instance.contract_monthly_salary}}</h6>
+        <p class="card-text">{{ instance.contract_description }}</p>
+        <a href="#" class="card-link">{{ instance.recruiter_email}}</a>
+        <p>{{ instance.contract_expiry_date }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+</div>
 
 {% endblock content %}

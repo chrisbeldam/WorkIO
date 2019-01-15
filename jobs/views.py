@@ -1,15 +1,13 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.views.generic.list import ListView
+from django.views.generic import ListView
 from .forms import ContractCreateForm
 from jobs.models import Contract
 import datetime
 
 class ContractListView(ListView):
-    model = Contract
-
-    def test:
-        pass
+    template_name = 'jobs/results.html'
+    queryset = Contract.objects.all()
 
 def index(request):
     """ Takes you back to the home page """

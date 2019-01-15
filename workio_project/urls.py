@@ -22,9 +22,10 @@ from jobs import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('results/', views.results, name='results'),
+    path('results/', views.ContractListView.as_view(), name='results'),
     path('create/', views.create_a_contract, name='create'),
     path('accounts/', include('django.contrib.auth.urls')),
+
     # path('accounts/', include('accounts.urls'))
     # Add List View for contracts
 ]

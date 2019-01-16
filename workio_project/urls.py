@@ -25,6 +25,7 @@ urlpatterns = [
     path('results/', views.ContractListView.as_view(), name='results'),
     path('create/', views.create_a_contract, name='create'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('contract/<int:pk>/', views.ContractDetailView.as_view(), name='contract-detail'), #Detail View
 
     # path('accounts/', include('accounts.urls'))
     # Add List View for contracts

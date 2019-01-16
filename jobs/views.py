@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .forms import ContractCreateForm
 from jobs.models import Contract
 import datetime
@@ -8,6 +8,10 @@ import datetime
 class ContractListView(ListView):
     template_name = 'jobs/results.html'
     queryset = Contract.objects.all()
+
+class ContractDetailView(DetailView):
+    model = Contract
+    page_title = "Detail View"
 
 def index(request):
     """ Takes you back to the home page """
@@ -35,6 +39,12 @@ def create_a_contract(request):
     }
     return render(request, 'jobs/create.html', context)
 
+def edit_a_contract(request):
+    """ Allows user to edit their contract once submitted """
+    page_title = "Edit your contract"
+
+    pass
+
 def home_page_search(request):
     """ Runs the search from the homepage """
     pass
@@ -58,9 +68,6 @@ def check_enhanced_expiry(request):
     """ Checks all of the jobs to see which are enhanced, then if they are expired it unenhances them """
     if Contract.objects.get(featured_contract = True): # grabs whether the contract is enhanced or not
         pass
-
-# def edit_a_contract(request):
-#     pass
 
 # def delete_a_contract(request):
 #     pass

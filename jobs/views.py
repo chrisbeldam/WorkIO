@@ -32,6 +32,7 @@ class ContractUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class ContractDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Contract
+    success_url = '/'
     page_title = "Delete View"
 
     def test_func(self):
@@ -39,6 +40,7 @@ class ContractDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == post.author:
             return True
         return False
+
 
 
 def index(request):

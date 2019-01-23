@@ -1,18 +1,3 @@
-"""workio_project URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
@@ -23,10 +8,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('results/', views.ContractListView.as_view(), name='results'),
-    path('create/', views.create_a_contract, name='create'),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('contract/<int:pk>/', views.ContractDetailView.as_view(), name='contract-detail'), #Detail View
-
-    # path('accounts/', include('accounts.urls'))
+    path('create/new/', views.ContractCreateView.as_view(), name='contact-create'),
+    path('contract/<int:pk>/update/', views.ContractUpdateView.as_view(), name='contract-update'),
+    path('contract/<int:pk>/delete/', views.ContractDeleteView.as_view(), name='contract-delete'),
+    path('contract/<int:pk>/', views.ContractDetailView.as_view(), name='contract-detail'),
+    path('accounts/', include('django.contrib.auth.urls'))
     # Add List View for contracts
 ]

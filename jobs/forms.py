@@ -14,7 +14,7 @@ class ContractCreateForm(forms.ModelForm):
             'recruiter_telephone',
             'date_created',
             'contract_expiry_date',
-            'contract_created_by',
+            'author',
         ]
 
 # class ContractUpgradeForm():

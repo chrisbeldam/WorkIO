@@ -2,6 +2,7 @@ import datetime
 from django.db import models
 from django.utils.translation import gettext as _
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Create your models here.
 class Contract(models.Model):
@@ -17,9 +18,10 @@ class Contract(models.Model):
     featured_expiry_date = models.DateField(default=datetime.date.today)
     date_created = models.DateField(_("Contract Start Date"), default=datetime.date.today) #This allows for the internationalisation of the date field #
     contract_expiry_date = models.DateField(_("Contract Expiry Date"), default=datetime.date.today)
-    contract_created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=True) # Links the user to the role
-    class Meta:
-        pass
+    author = models.ForeignKey(User, on_delete=models.CASCADE, default=True) # Links the user to the role
 
     def __str__(self):
         return self.contract_title
+
+    def get_absolute_url(self):
+        return reverse('contract-detail', kwargs={'pk': self.pk})

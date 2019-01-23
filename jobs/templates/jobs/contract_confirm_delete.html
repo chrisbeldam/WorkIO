@@ -1,0 +1,19 @@
+{% extends "jobs/base.html" %}
+
+{% load bootstrap4 %}
+{% block title %} {{ page_title }} {%endblock title%}
+{% block content %}
+<div class="jumbotron jumbotron-fluid" style="width:50%; margin:0 auto; text-align:center">
+  <h2>Delete Contract</h2>
+  <h2>Are you sure you want to delete "{{object.contract_title}}"</h2>
+</div>
+
+<form action="" method="POST">
+  <div class="row">
+    <div class="col-sm-10 px-2 py-5" style="text-align:center;">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary" style="text-align:center">Yes, Delete</button>
+    </div>
+  </div>
+</form>
+{% endblock content %}

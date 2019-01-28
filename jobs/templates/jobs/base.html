@@ -45,6 +45,13 @@
   </div>
 
   <div class="container" id="block">
+    {% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-{{message.tags}}">
+        {{ message }}
+      </div>
+      {% endfor %}
+    {% endif %}
   {% block content %}{% endblock content %}
   </div>
 </body>

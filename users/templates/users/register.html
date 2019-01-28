@@ -1,0 +1,24 @@
+{% extends "jobs/base.html" %}
+
+{% load bootstrap4 %}
+{% block title %} {{ page_title }} {%endblock title%}
+
+{% block content %}
+
+<div class="content-section">
+  <form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Join Up</legend>
+      {{ form.as_p }}
+    </fieldset>
+    <button class="btn btn-info" type="submit">Sign Up</button>
+  </form>
+  <div class=border-top pt-3">
+    <small class="text-muted">
+      Already have an account? <a href="#" class="ml-2">Login</a>
+    </small>
+  </div>
+</div>
+
+{% endblock content %}

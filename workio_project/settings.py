@@ -129,3 +129,4 @@ STATICFILES_DIR = [
 ]
 
 LOGIN_REDIRECT_URL = 'index'
+LOGIN_URL = 'login'

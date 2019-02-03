@@ -8,7 +8,7 @@ from users import views as user_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('results/', views.ContractListView.as_view(), name='results'),
+    path('results/', views.contract_model_list_view, name='results'),
     path('create/new/', views.ContractCreateView.as_view(), name='contract-create'),
     path('contract/<int:pk>/update/', views.ContractUpdateView.as_view(), name='contract-update'),
     path('contract/<int:pk>/delete/', views.ContractDeleteView.as_view(), name='contract-delete'),

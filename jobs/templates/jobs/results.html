@@ -7,10 +7,17 @@
 {% block content %}
 <div class="position-relative overflow-hidden p-3 m-md-3 text-center bg-light">
   <div class="col-md-5 p-lg-5 mx-auto my-5">
-    <h1 class="display-4 font-weight-normal">View Contract Results</h1>
-    <p class="lead font-weight-normal">Below you can find contracts which are relative to your search.</p>
+    <div class="input-group mb-3">
+      <form method="GET" action='/results/'>
+      <input type="text" name="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1" style="text-align:center">
+      <button type="submit" class="btn btn-primary" style="text-align:center">Submit</button>
+    </div>
+  </form>
   </div>
 </div>
+
+
+
 
 <div class="container">
   <div class="row">

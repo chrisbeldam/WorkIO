@@ -16,6 +16,7 @@ def register(request):
 
     else:
         form = UserReigsterForm()
+        messages.error(request, f"You've not corrected completed this form. Please try again")
     return render(request, 'users/register.html', {'form': form})
 
 @login_required
